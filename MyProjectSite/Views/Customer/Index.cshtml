@@ -1,0 +1,96 @@
+﻿@model IEnumerable<MyProjectSite.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/content/MyContent/css/CusIndex.css" rel="stylesheet" />
+<h2>Customer Details</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateofBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PicturePath)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(p=> item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(p=> item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.DateofBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(p => item.Address)
+        </td>
+        
+        
+          
+        
+    
+    </tr>
+}
+
+</table>

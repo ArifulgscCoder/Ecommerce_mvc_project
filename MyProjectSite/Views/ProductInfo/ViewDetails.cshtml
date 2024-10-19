@@ -1,0 +1,115 @@
+﻿@model MyProjectSite.Models.Product
+
+@{
+    ViewBag.Title = "View Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/MyContent/css/style.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="~/content/MyContent/css/ViewDetails.css" rel="stylesheet" />
+<!-- product category -->
+
+<div>
+    <section id="aa-product-details" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="product-view-slider">
+                        <div id="demo-1" class="simpleLens-gallery-container">
+                            <div class="simpleLens-container">
+                                <div class="simpleLens-big-image-container">
+                                    <a data-lens-image="@Url.Content(Model.PicturePath)" class="simpleLens-lens-image">
+                                        <img src="@Url.Content(Model.PicturePath)" class="simpleLens-big-image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="product-view-content">
+                        <h3><strong>@Model.Name</strong></h3>
+                        <div class="product-rating my-3">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (ViewBag.AvgRate >= i)
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                                else
+                                {
+                                    <span class="fa fa-star-o"></span>
+                                }
+                            }
+                        </div>
+
+                        <div class="aa-price-block">
+                            <span class="aa-product-view-price">TK. <b>@Model.UnitPrice</b></span>
+                            @if (Model.UnitInStock > 0)
+                            {
+                                <p class="aa-product-avilability mt-3">
+                                    <span class="bg-success text-white">In Stock (@Model.UnitInStock)</span>
+                                </p>
+                            }
+                            else
+                            {
+                                <p class="aa-product-avilability mt-3">
+                                    <span class="bg-danger text-white">Out of Stock</span>
+                                </p>
+                            }
+                        </div>
+                        <p>@Model.ShortDescription</p>
+                        <div class="aa-prod-quantity mt-4">
+                            <h5>Quantity:</h5>
+                            <form action="">
+                                <input type="number" name="quantity" min="1" max="99" value="1" class="form-control w-25">
+                            </form>
+                        </div>
+                        <div class="aa-prod-view-bottom mt-4">
+                            @if (Model.UnitInStock > 0)
+                            {
+                                <a class="btn btn-primary" href="@Url.Action("AddToCart", "ProductInfo", new { id=Model.ProductID})">Add To Cart</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-secondary disabled" href="#">Add To Cart</a>
+                            }
+                            <a class="btn btn-outline-secondary" href="@Url.Action("WishList", "ProductInfo", new { id = Model.ProductID })">Wishlist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<div id="cart-counter" style="display:none;">
+    <span>Items in Cart: <span id="cart-count">0</span></span>
+</div>
+
+<!--================ End Inspired Product Area =================-->
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+
+<div id="feedback-message" class="alert alert-success d-none" role="alert">
+    Product added successfully!
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.aa-add-to-cart-btn').click(function (event) {
+            event.preventDefault();
+            $('#feedback-message').removeClass('d-none').hide().fadeIn('slow');
+
+            setTimeout(function () {
+                $('#feedback-message').fadeOut('slow', function () {
+                    $(this).addClass('d-none');
+                });
+            }, 3000);
+        });
+    });
+</script>

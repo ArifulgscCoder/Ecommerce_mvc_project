@@ -1,0 +1,137 @@
+﻿/* General styles */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #343a40;
+    color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    z-index: 1000;
+}
+
+    .sidebar .sidebar-content {
+        padding: 20px;
+    }
+
+    .sidebar .sidebar-brand {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar .sidebar-nav {
+        padding: 0;
+        list-style: none;
+    }
+
+        .sidebar .sidebar-nav .sidebar-item {
+            margin-bottom: 10px;
+        }
+
+        .sidebar .sidebar-nav .sidebar-link {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+            .sidebar .sidebar-nav .sidebar-link:hover,
+            .sidebar .sidebar-nav .sidebar-item.active .sidebar-link {
+                background-color: #495057;
+            }
+
+            .sidebar .sidebar-nav .sidebar-link i {
+                margin-right: 10px;
+                font-size: 18px;
+            }
+
+    .sidebar .sidebar-header {
+        font-size: 14px;
+        color: #adb5bd;
+        padding: 10px 15px;
+    }
+
+.sidebar-toggle {
+    cursor: pointer;
+    padding: 10px;
+    color: #343a40;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.hamburger {
+    display: inline-block;
+}
+
+/* Main content styles */
+.main {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    color: #343a40;
+}
+
+    .navbar-nav .nav-item .nav-link:hover {
+        color: #007bff;
+    }
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-top: 1px solid #dee2e6;
+    position: fixed;
+    width: calc(100% - 250px);
+    bottom: 0;
+    left: 250px;
+}
+
+    .footer .text-muted {
+        color: #6c757d !important;
+    }
+
+.text-start {
+    text-align: left !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+        .sidebar .sidebar-content {
+            padding: 0;
+        }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .footer {
+        width: 100%;
+        left: 0;
+    }
+}

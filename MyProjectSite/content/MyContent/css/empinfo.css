@@ -1,0 +1,82 @@
+﻿
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+}
+
+.about-section {
+    background-color: #f1f1f1; /* Light gray background */
+}
+
+.about-text {
+    padding: 30px;
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px;
+}
+
+    .about-text h2 {
+        color: #333; /* Dark text color */
+    }
+
+    .about-text hr {
+        border-top: 1px solid #ccc; /* Light gray horizontal line */
+        margin: 15px 0;
+    }
+
+.about-list {
+    margin-top: 20px;
+}
+
+    .about-list .media {
+        margin-bottom: 15px;
+    }
+
+    .about-list .fs-4 {
+        font-size: 16px; /* Adjust font size for labels and text */
+    }
+
+.about-avatar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.counter {
+    margin-top: 30px;
+}
+
+    .counter .btn {
+        padding: 8px 16px;
+        border-radius: 4px;
+    }
+
+.btn-danger {
+    background-color: #dc3545; /* Red button background */
+    border-color: #dc3545;
+    color: #fff; /* White text color */
+}
+
+    .btn-danger:hover {
+        background-color: #c82333; /* Darker red on hover */
+        border-color: #bd2130;
+    }
+
+

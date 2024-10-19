@@ -1,0 +1,76 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ced4da; /* Gray border */
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .form-control:focus {
+        border-color: #66afe9; /* Focus color */
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+    }
+
+.text-danger {
+    color: #dc3545; /* Red text for validation messages */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: #28a745; /* Success button color */
+    border-color: #28a745;
+    color: #fff;
+}
+
+    .btn-success:hover {
+        background-color: #218838; /* Darker shade on hover */
+        border-color: #1e7e34;
+    }
+
+.btn-danger {
+    background-color: #dc3545; /* Danger button color */
+    border-color: #dc3545;
+    color: #fff;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333; /* Darker shade on hover */
+        border-color: #bd2130;
+    }
+
+/* Image Styles */
+.img-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px;
+}

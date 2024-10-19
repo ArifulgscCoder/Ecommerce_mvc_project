@@ -1,0 +1,148 @@
+﻿
+/* Section Styles */
+#aa-catg-head-banner {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+    #aa-catg-head-banner img {
+        display: none;
+    }
+
+.aa-catg-head-banner-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aa-catg-head-banner-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.aa-catg-head-banner-content .breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .aa-catg-head-banner-content .breadcrumb .breadcrumb-item {
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+        .aa-catg-head-banner-content .breadcrumb .breadcrumb-item.active {
+            color: #ffd700; /* Active breadcrumb color */
+        }
+
+/* Panel Styles */
+.panel-title a {
+    color: #333;
+    font-size: 1.2rem;
+    display: block;
+    padding: 15px 20px;
+    background-color: #f8f9fa; /* Light grey */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    .panel-title a:hover {
+        background-color: #e9ecef; /* Lighter grey on hover */
+        text-decoration: none;
+    }
+
+.panel-body {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Form and Input Styles */
+.aa-checkout-single-bill input[type="text"],
+.aa-checkout-single-bill input[type="email"],
+.aa-checkout-single-bill input[type="tel"],
+.aa-checkout-single-bill textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+    .aa-checkout-single-bill input[type="text"]:focus,
+    .aa-checkout-single-bill input[type="email"]:focus,
+    .aa-checkout-single-bill input[type="tel"]:focus,
+    .aa-checkout-single-bill textarea:focus {
+        border-color: #4a90e2; /* Blue border on focus */
+        outline: none;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Light blue shadow on focus */
+    }
+
+/* Table Styles */
+.table {
+    margin-bottom: 20px;
+}
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+    }
+
+    .table thead th {
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table tfoot th {
+        font-weight: bold;
+    }
+
+/* Button Styles */
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+/* Payment Method Dropdown */
+.aa-payment-method .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

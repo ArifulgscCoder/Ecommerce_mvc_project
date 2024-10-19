@@ -1,0 +1,95 @@
+﻿
+/* Login and Register Section Styling */
+#aa-myaccount {
+    padding: 80px 0; /* Adjust padding as needed */
+    background-color: #f9f9f9; /* Background color */
+}
+
+.aa-myaccount-area {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.aa-myaccount-login {
+    margin-bottom: 30px;
+}
+
+    .aa-myaccount-login h4 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .aa-myaccount-login label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .aa-myaccount-login input[type="text"],
+    .aa-myaccount-login input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+        .aa-myaccount-login input[type="text"]:focus,
+        .aa-myaccount-login input[type="password"]:focus {
+            outline: none;
+            border-color: #66afe9; /* Optional: Highlight on focus */
+        }
+
+    .aa-myaccount-login button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #5cb85c; /* Green */
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        .aa-myaccount-login button[type="submit"]:hover {
+            background-color: #4cae4c; /* Darker green on hover */
+        }
+
+.rememberme {
+    margin-top: 10px;
+    display: block;
+}
+
+.aa-myaccount-register {
+    text-align: center;
+}
+
+    .aa-myaccount-register h4 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .aa-myaccount-register h3 {
+        font-size: 20px;
+        color: #337ab7; /* Blue */
+        margin-bottom: 20px;
+    }
+
+    .aa-myaccount-register .btn-primary {
+        background-color: #337ab7; /* Blue */
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+
+        .aa-myaccount-register .btn-primary:hover {
+            background-color: #286090; /* Darker blue on hover */
+        }
+
+
+

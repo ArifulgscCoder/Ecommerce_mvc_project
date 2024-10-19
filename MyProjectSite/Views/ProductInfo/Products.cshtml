@@ -1,0 +1,300 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<MyProjectSite.Models.Product>
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container-fluid {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow effect */
+}
+
+/* Header Styles */
+h2.text-info {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Pagination Styles */
+.pagination > .active > a {
+    color: #fff;
+    background-color: #3fc35f;
+    border: 1px solid #3fc35f;
+}
+
+/* Sidebar Price Range Styles */
+.aa-sidebar-price-range #minValue,
+.aa-sidebar-price-range #maxValue {
+    border: 1px solid #e8e7e6;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 4px 10px;
+}
+
+/* Sidebar Styles */
+.aa-sidebar {
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.aa-sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.aa-catg-nav li {
+    margin-bottom: 10px;
+}
+
+.aa-catg-nav li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.aa-catg-nav li a:hover {
+    color: #007bff;
+}
+
+/* Product List Styles */
+.aa-product-catg-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.aa-product-catg-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.aa-product-catg-head select {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.aa-product-catg-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.aa-product-catg-body li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: calc(33.333% - 20px);
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.aa-product-catg-body li img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Action Button Styles */
+.btn-outline-primary,
+.btn-outline-warning,
+.btn-outline-info,
+.btn-outline-danger {
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #fff;
+}
+
+.btn-outline-info:hover {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #fff;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+
+
+</style>
+
+<style>
+    .pagination > .active > a {
+        color: #fff;
+        background-color: #3fc35f;
+        border: 1px solid #3fc35f;
+    }
+
+    .aa-sidebar-price-range #minValue #maxValue {
+        border: 1px solid #e8e7e6;
+        display: inline-block;
+        font-size: 14px;
+        height: 30px;
+        margin-right: 10px;
+        margin-top: 20px;
+        padding: 4px 10px;
+    }
+</style>
+<!-- catg header banner section -->
+@if (!string.IsNullOrEmpty(Request.QueryString["categoryName"]))
+{
+    <section id="aa-catg-head-banner">
+        <img src="~/Content/img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+        <div class="aa-catg-head-banner-area">
+            <div class="container">
+                <div class="aa-catg-head-banner-content">
+                    <h2>@(Request.QueryString["categoryName"])</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li class="active">@(Request.QueryString["categoryName"])</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>}
+<!-- / catg header banner section -->
+<!-- product category -->
+<section id="aa-product-category">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
+                <div class="aa-product-catg-content">
+                    <div class="aa-product-catg-head">
+                        <div class="aa-product-catg-head-left">
+                            @using (Html.BeginForm("Products", "ProductInfo", FormMethod.Post, new { @id = "ssForm", categoryName = Request.QueryString["categoryName"] }))
+                            {
+
+                                <label for="">Sort by</label>
+                                <select name="sortBy">
+                                    <option value="Default" selected> Default</option>
+                                    <option value="Name"> Name</option>
+                                    <option value="Price">Price</option>
+                                    <option value="Date">Date</option>
+                                </select>
+
+                                <label for="">Show</label>
+                                <select name="showNoProducts" onchange="">
+                                    <option value="6" selected>6</option>
+                                    <option value="9">9</option>
+                                    <option value="12">12</option>
+                                </select>}
+                        </div>
+                        <div class="aa-product-catg-head-right">
+                            <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
+                        </div>
+                    </div>
+                    <div class="aa-product-catg-body">
+                        <ul class="aa-product-catg">
+                            <!-- start single product item -->
+                            @if (Model != null || Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    { Html.RenderPartial("_Product", item); }
+                                }
+                            }
+                            else
+                            {
+
+                                <p>Sorry! There is no Product available</p>
+
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+                <aside class="aa-sidebar" style="background-color: #f3f3f3;">
+
+                   
+
+                    <!-- single sidebar -->
+                    <div class="aa-sidebar-widget">
+                        <h3>Shop By Price</h3>
+                        <!-- price range -->
+                        <div class="aa-sidebar-price-range">
+
+                            @using (Html.BeginForm("FilterByPrice", "ProductInfo", FormMethod.Get))
+                            {
+
+                                <input type="range" min="0" max="100" onchange="updateMinInput(this.value);"> <br />
+                                <input type="range" min="0" max="100" onchange="updateMaxInput(this.value);">
+                                <br />
+                                <input type="number" name="minPrice" id="minValue" min="0" maxlength="6" max="999999" value="00" size="6">
+                                <input type="number" name="maxPrice" id="maxValue" min="0" maxlength="6" max="999999" value="00" size="6"> <br /><br />
+                                <button class="aa-filter-btn" type="submit" style="background-color:blue">Filter</button>}
+                        </div>
+
+                    </div>
+
+                    <!-- single sidebar -->
+                    <div class="aa-sidebar-widget">
+                        <h3>Category</h3>
+                        <ul class="aa-catg-nav">
+                            @foreach (var item in ViewBag.SubCategories)
+                            {
+                                <li><a href="@Url.Action("GetProductsByCategory", new { categoryName = item })">@item</a></li>
+
+                            }
+                        </ul>
+                    </div>
+               
+
+
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- / product category -->
+
+<script type="text/javascript">function updateMinInput(val) {
+        document.getElementById('minValue').value = 00;
+        document.getElementById('minValue').value = val * 10;
+    }
+    function updateMaxInput(val) {
+        document.getElementById('maxValue').value = 00;
+        document.getElementById('maxValue').value = val * 100;
+    }</script>
+
+

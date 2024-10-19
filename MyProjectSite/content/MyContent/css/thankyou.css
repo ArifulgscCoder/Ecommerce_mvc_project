@@ -1,0 +1,21 @@
+﻿#aa-thankyou {
+    background-color: #f8f9fa;
+}
+
+.aa-thankyou-area {
+    padding: 40px 20px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .aa-thankyou-area h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .aa-thankyou-area p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }

@@ -1,0 +1,92 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+}
+
+.about-section {
+    background-color: #fff; /* White background */
+}
+
+.about-text {
+    margin-bottom: 30px;
+}
+
+.about-avatar img {
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+.dark-color {
+    color: #343a40; /* Dark text color */
+}
+
+.theme-color {
+    color: #dc3545; /* Red theme color */
+}
+
+
+
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-info {
+    background-color: #17a2b8; /* Info button color */
+    border-color: #17a2b8;
+    color: #fff;
+}
+
+    .btn-info:hover {
+        background-color: #138496; /* Darker shade on hover */
+        border-color: #117a8b;
+    }
+
+.btn-danger {
+    background-color: #dc3545; /* Danger button color */
+    border-color: #dc3545;
+    color: #fff;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333; /* Darker shade on hover */
+        border-color: #bd2130;
+    }
+
+/* Form Styling */
+.fs-4 {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px; /* Adjust font size as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .form-control:focus {
+        border-color: #66afe9; /* Focus color */
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+    }

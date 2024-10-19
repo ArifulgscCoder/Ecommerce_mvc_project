@@ -1,0 +1,32 @@
+﻿.product-view-slider img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-view-content {
+    padding: 20px;
+    background-color: bisque;
+}
+
+.product-rating .fa {
+    color: #ff6600;
+}
+
+.aa-price-block {
+    margin: 20px 0;
+}
+
+    .aa-price-block span {
+        font-size: 1.5rem;
+        color: #ff6600;
+    }
+
+.aa-product-avilability span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.aa-prod-view-bottom a {
+    margin-right: 10px;
+}

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MyProjectSite.Models.AdminEmp>
+@{
+    ViewBag.Title = "Employee Information";
+}
+<link href="~/content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/content/MyContent/css/EmpInformation.css" rel="stylesheet" />
+<div class="row">
+    <div class="col">
+        <h2 class="text-info">Employee List</h2>
+        <hr />
+        <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+        <div class="d-flex justify-content-end mb-2">
+            <a href="@Url.Action("Create", "Employee")" class="btn btn btn-outline-primary"><i class="fa-regular fa-square-plus fs-1"></i>Add New Employee</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-condensed table-hover table-bordered table-striped table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(e => e.FirstName)</th>
+                        <th>@Html.DisplayNameFor(e => e.LastName)</th>
+                        <th>@Html.DisplayNameFor(e => e.DateofBirth)</th>
+                        <th>@Html.DisplayNameFor(e => e.Gender)</th>
+                        <th>@Html.DisplayNameFor(e => e.Email)</th>
+                        <th>@Html.DisplayNameFor(e => e.Phone)</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var emp in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(e => emp.FirstName)</td>
+                            <td>@Html.DisplayFor(e => emp.LastName)</td>
+                            <td>@Html.DisplayFor(e => emp.DateofBirth)</td>
+                            <td>@Html.DisplayFor(e => emp.Gender)</td>
+                            <td>@Html.DisplayFor(e => emp.Email)</td>
+                            <td>@Html.DisplayFor(e => emp.Phone)</td>
+                          
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
