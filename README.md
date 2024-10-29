@@ -40,7 +40,9 @@ Welcome to the **E-commerce MVC Project**! This web application provides a compr
 User Login:
 
 Username: user@gmail.com
+
 Password: 12345
+
 Admin Login:
 
 Username: admin
